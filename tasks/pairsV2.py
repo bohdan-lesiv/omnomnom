@@ -1,11 +1,11 @@
 def filter_pairs(numbers, sum_filter=10):
-    numbers_map = list(map(int, numbers))
-    n = len(numbers_map)
+    numbers_list = list(map(int, numbers))
     pairs = []
-    for x in range(0, n):
-        for y in range(x + 1, n):
-            if numbers_map[x] + numbers_map[y] == sum_filter:
-                pairs.append((numbers_map[x], numbers_map[y]))
+    while numbers_list:
+        num = numbers_list.pop()
+        diff = sum_filter - num
+        if diff in numbers_list:
+            pairs.append((diff, num))
     if not pairs:
         print("There are no numbers in the list that are equal to %s" % sum_filter)
     return pairs
