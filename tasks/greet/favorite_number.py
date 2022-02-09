@@ -16,7 +16,3 @@ def favorite_number():
     """
     number = input("Hello, whats your favorite number?: ")
     print(num2words(number))
-
-
-if __name__ == "__main__":
-    favorite_number()
